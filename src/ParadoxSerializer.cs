@@ -97,6 +97,12 @@ namespace Pdoxcl2Sharp
                         var ty = propertyInfo.PropertyType.GetGenericArguments()[0];
                         dict.Add(hash, new DecodeList(propertyInfo, GetConverter(ty), ty, GetPropertyType(ty)));
                     }
+                    else if (propertyInfo.PropertyType.IsGenericType &&
+                             propertyInfo.PropertyType.GetGenericTypeDefinition() == typeof(Dictionary<,>))
+                    {
+                        var ty = propertyInfo.PropertyType.GetGenericArguments()[1];
+                        dict.Add(hash, new DecodeDict(propertyInfo, GetConverter(ty), ty, GetPropertyType(ty)));
+                    }
                     else
                     {
                         dict.Add(hash, new DecodeObject(propertyInfo));

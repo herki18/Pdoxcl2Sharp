@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pdoxcl2Sharp", "src\Pdoxcl2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pdoxcl2Sharp.Tests", "tests\Pdoxcl2Sharp.Tests.csproj", "{8E8BABF0-D6A5-447B-8B77-C3465FA0F70A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{4718B392-4688-4CED-874C-4F00991F9329}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8E8BABF0-D6A5-447B-8B77-C3465FA0F70A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E8BABF0-D6A5-447B-8B77-C3465FA0F70A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E8BABF0-D6A5-447B-8B77-C3465FA0F70A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4718B392-4688-4CED-874C-4F00991F9329}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4718B392-4688-4CED-874C-4F00991F9329}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4718B392-4688-4CED-874C-4F00991F9329}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4718B392-4688-4CED-874C-4F00991F9329}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
