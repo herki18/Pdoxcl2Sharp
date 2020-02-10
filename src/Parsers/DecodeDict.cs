@@ -13,7 +13,7 @@ namespace Pdoxcl2Sharp.Parsers
 
         public override PropertyType ChildFormat { get; }
 
-        public DecodeDict(PropertyInfo property, TextConvert children, Type childType, PropertyType childFormat) : base(property, PropertyType.Object)
+        public DecodeDict(PropertyInfo property, TextConvert children, Type childType, PropertyType childFormat) : base(property, PropertyType.Array)
         {
             _addFn = property.PropertyType.GetMethod("Add");
             _children = children;
@@ -29,7 +29,8 @@ namespace Pdoxcl2Sharp.Parsers
 
         public override void AddChild(object obj, object nestedObj)
         {
-            base.AddChild(obj, nestedObj);
+            _addFn.Invoke(obj, new[] {"abc1", nestedObj});
+            //base.AddChild(obj, nestedObj);
         }
     }
 }
