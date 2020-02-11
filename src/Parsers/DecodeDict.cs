@@ -10,13 +10,23 @@ namespace Pdoxcl2Sharp.Parsers
         private readonly TextConvert _children;
         
         public override Type ChildType { get; }
-
         public override PropertyType ChildFormat { get; }
 
-        public DecodeDict(PropertyInfo property, TextConvert children, Type childType, PropertyType childFormat) : base(property, PropertyType.Array)
+        public Type KeyType { get; }
+        public PropertyType KeyFormat { get; }
+        
+        public DecodeDict(
+            PropertyInfo property,
+            Type keyType,
+            PropertyType keyFormat,
+            TextConvert children,
+            Type childType,
+            PropertyType childFormat) : base(property, PropertyType.Array)
         {
             _addFn = property.PropertyType.GetMethod("Add");
             _children = children;
+            KeyType = keyType;
+            KeyFormat = keyFormat;
             ChildType = childType;
             ChildFormat = childFormat;
         }

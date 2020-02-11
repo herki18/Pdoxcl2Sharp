@@ -100,8 +100,11 @@ namespace Pdoxcl2Sharp
                     else if (propertyInfo.PropertyType.IsGenericType &&
                              propertyInfo.PropertyType.GetGenericTypeDefinition() == typeof(Dictionary<,>))
                     {
-                        var ty = propertyInfo.PropertyType.GetGenericArguments()[1];
-                        dict.Add(hash, new DecodeDict(propertyInfo, GetConverter(ty), ty, GetPropertyType(ty)));
+                        var keyType = propertyInfo.PropertyType.GetGenericArguments()[0];
+                        var childType = propertyInfo.PropertyType.GetGenericArguments()[1];
+                        dict.Add(hash, new DecodeDict(propertyInfo, 
+                            keyType, GetPropertyType(keyType), 
+                            GetConverter(childType), childType, GetPropertyType(childType)));
                     }
                     else
                     {

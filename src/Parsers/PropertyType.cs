@@ -5,6 +5,7 @@
         None,
         Scalar,
         Object,
-        Array
+        Array,
+        Dictionary
     }
 }
